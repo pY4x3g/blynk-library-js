@@ -200,6 +200,7 @@ exports.SslClient = function(options) {
     }, function() {
       console.log("SSL authorization...");
       opts.socket = sock;
+      opts.ca = null;
       self.sock = tls.connect(opts, function() {
         if (!self.sock.authorized) {
           console.log('SSL not authorized');
